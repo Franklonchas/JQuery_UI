@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ejercicio soltables</title>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <style>
+
+      .container { width: 500px; height: 500px; background-color: #fff; border: 2px dashed #00B4FF; text-align: center; font-size: 20px; color: #666;}
+      .arrastrable { width: 100px; font-size: 20px; text-align: center; background-color: #555; color: #fff; border: 1px solid #eee}
+
+  </style>
+
+</head>
+<body>
+ 
+    <div class="container"></div>
+    <div class="card arrastrable" id="a1" style="width: 18rem;">
+
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+    <div class="card arrastrable" id="a2" style="width: 18rem;">
+
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+ 
+ 
+</body>
+
+<script>
+
+    $( function() {
+        $( ".arrastrable" ).draggable({
+            cursor: "pointer",
+            start: function() { $(this).css("background-color","#f44336"); },
+            stop: function() { $(this).css("background-color","#008CBA"); },
+            drag: function() { $(this).css("background-color","#4CAF50"); }
+        });
+        $(".container").droppable({
+            drop: function() { $(this).html("El elemento se ha soltado"); },
+            over: function() {$(this).html("El elemento esta dentro");},
+            out: function(){$(this).html("El elemento esta fuera");},
+            accept: "#a1",
+            tolerance: "fit"
+        });
+    });
+</script>
+
+</html>

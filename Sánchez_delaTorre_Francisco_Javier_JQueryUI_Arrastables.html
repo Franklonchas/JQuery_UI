@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Ejemplo 2</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+
+        $ (function(){
+            $( "#arrastrable" ).draggable({
+                containment: "parent",
+                cursor: "crosshair",
+                delay:200,
+                grid:[50,50],
+                zIndex:100,
+                stack:"#arrastrable",
+                start(){
+                    $(this).css("background-color","#f44336");
+                }
+            });
+        });
+    </script>
+    <style>
+        .container {
+            width:1000px;
+            height:1000px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="arrastrable" class="card" style="width: 18rem;">
+        <img class="card.img-top" src="http://www.imagen.com.mx/assets/img/imagen_share.png" height="300px" width="285px" alt="imagen card">
+        <div class="card-body">
+            <h5 class="card-tittle">CABECERA</h5>
+            <P>idowjdìoqhwoipqhwdpoiqhwdoiqhodiqhwoi</p>
+            <a href="#" class="btn btn-primary">Tira millas</a>
+        </div>
+    </div>
+
+    <div id="arrastrable" class="card" style="width: 18rem;">
+        <img class="card.img-top" src="http://www.imagen.com.mx/assets/img/imagen_share.png" height="300px" width="285px" alt="imagen card">
+        <div class="card-body">
+            <h5 class="card-tittle">CABECERA</h5>
+            <P>idowjdìoqhwoipqhwdpoiqhwdoiqhodiqhwoi</p>
+            <a href="#" class="btn btn-primary">Tira millas</a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ejercicio Ordenables</title>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+    <style>
+
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://cdn.elgrupoinformatico.com/Noticias/2017/12/jaja-inocentes-550x312.jpg" class="img-fluid" alt="Responsive image" id="a1">
+        <img src="https://cdn.elgrupoinformatico.com/Noticias/2017/12/jaja-inocentes-550x312.jpg" class="img-fluid" alt="Responsive image">
+        <img src="https://cdn.elgrupoinformatico.com/Noticias/2017/12/jaja-inocentes-550x312.jpg" class="img-fluid" alt="Responsive image">
+        <img src="https://cdn.elgrupoinformatico.com/Noticias/2017/12/jaja-inocentes-550x312.jpg" class="img-fluid" alt="Responsive image">
+    </div>
+
+
+</body>
+
+<script>
+    $( function() {
+        $(".container").sortable({
+            axis: "x",
+            cancel: "#a1",
+            cursor: "move",
+            //grid: [0,120],
+            revert: true,
+            start: function() { $("li").css("background-color","#008CBA"); }, //No se ve por que es una foto
+            stop: function() { $("li").css("background-color","#555"); }, //No se ve por que es una foto
+            update: function() { alert("El orden ha cambiado"); }
+        });
+    });
+
+</script>
+
+</html>

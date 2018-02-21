@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Widget2</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+</head>
+
+<body>
+
+<div id="dialog-confirm" title="Dialogo de JQuery UI">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Este es un Dialog hecho
+        con JQuery UI, cuando le des a los botones se eliminara!</p>
+    <p>
+    <ul>
+        <li>Francisco</li>
+        <li>Sanchez</li>
+        <li>JQuery UI</li>
+    </ul>
+    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam varius lectus ac justo rhoncus euismod vitae vitae
+        lacus. Phasellus tempor turpis dignissim, accumsan velit eget, auctor massa. Etiam nisi velit, tristique sit
+        amet scelerisque ac, posuere nec nunc. Suspendisse potenti. Aliquam elementum interdum nisl. Sed mollis rhoncus
+        blandit. </p>
+</div>
+
+
+<div class="container">
+
+    <ul id="menu">
+        <li class="ui-state-disabled">
+            <div>Toys (n/a)</div>
+        </li>
+        <li>
+            <div>Books</div>
+        </li>
+        <li>
+            <div>Clothing</div>
+        </li>
+        <li>
+            <div>Electronics</div>
+            <ul>
+                <li class="ui-state-disabled">
+                    <div>Home Entertainment</div>
+                </li>
+                <li>
+                    <div>Car Hifi</div>
+                </li>
+                <li>
+                    <div>Utilities</div>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div>Movies</div>
+        </li>
+        <li>
+            <div>Music</div>
+            <ul>
+                <li>
+                    <div>Rock</div>
+                    <ul>
+                        <li>
+                            <div>Alternative</div>
+                        </li>
+                        <li>
+                            <div>Classic</div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Jazz</div>
+                    <ul>
+                        <li>
+                            <div>Freejazz</div>
+                        </li>
+                        <li>
+                            <div>Big Band</div>
+                        </li>
+                        <li>
+                            <div>Modern</div>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div>Pop</div>
+                </li>
+            </ul>
+        </li>
+        <li class="ui-state-disabled">
+            <div>Specials (n/a)</div>
+        </li>
+    </ul>
+
+</div>
+
+
+<div class="container">
+
+    <p>
+        <label for="amount">Rango de precio:</label>
+        <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+    </p>
+
+    <div id="slider-range-min"></div>
+
+</div>
+
+</body>
+
+<script type="text/javascript" charset="utf-8">
+
+    $(function () {
+        $("#dialog-confirm").dialog({
+            resizable: false,
+            height: "auto",
+            width: 400,
+            modal: true,
+            buttons: {
+                "Aceptar": function () {
+                    $(this).dialog("close");
+                },
+                Cancelar: function () {
+                    $(this).dialog("close");
+                }
+            }
+        });
+    });
+
+    $(function () {
+        $("#menu").menu();
+    });
+
+    $(function () {
+        $("#slider-range-min").slider({
+            range: "min",
+            value: 10,
+            min: 1,
+            max: 100,
+            slide: function (event, ui) {
+                $("#amount").val("$" + ui.value);
+            }
+        });
+        $("#amount").val("$" + $("#slider-range-min").slider("value"));
+    });
+
+</script>
+</html>

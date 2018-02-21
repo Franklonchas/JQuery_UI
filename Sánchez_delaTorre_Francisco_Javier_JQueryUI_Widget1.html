@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <div id="acordeon">
+        <h3>Autocompletar</h3>
+        <div>
+            <div class="ui-widget">
+                <label for="tags">Escriba aqui: </label>
+                <input id="tags">
+            </div>
+        </div>
+        <h3>Boton</h3>
+        <div>
+            <button id="boton">Icono --></button>
+        </div>
+        <h3>Check</h3>
+        <div>
+
+            <fieldset>
+                <legend>Hotel Ratings: </legend>
+                <label for="checkbox-1">2 Star</label>
+                <input type="checkbox" name="checkbox-1" id="checkbox-1">
+                <label for="checkbox-2">3 Star</label>
+                <input type="checkbox" name="checkbox-2" id="checkbox-2">
+                <label for="checkbox-3">4 Star</label>
+                <input type="checkbox" name="checkbox-3" id="checkbox-3">
+                <label for="checkbox-4">5 Star</label>
+                <input type="checkbox" name="checkbox-4" id="checkbox-4">
+            </fieldset>
+
+        </div>
+
+        <h3>ControlGroups</h3>
+        <div>
+            <fieldset>
+                <legend>Rental Car</legend>
+                <div class="controlgroup">
+                    <select id="car-type">
+                        <option>Compact car</option>
+                        <option>Midsize car</option>
+                        <option>Full size car</option>
+                        <option>SUV</option>
+                        <option>Luxury</option>
+                        <option>Truck</option>
+                        <option>Van</option>
+                    </select>
+                    <label for="transmission-standard">Standard</label>
+                    <input type="radio" name="transmission" id="transmission-standard">
+                    <label for="transmission-automatic">Automatic</label>
+                    <input type="radio" name="transmission" id="transmission-automatic">
+                    <label for="insurance">Insurance</label>
+                    <input type="checkbox" name="insurance" id="insurance">
+                    <label for="horizontal-spinner" class="ui-controlgroup-label"># of cars</label>
+                    <input id="horizontal-spinner" class="ui-spinner-input">
+                    <button>Book Now!</button>
+                </div>
+            </fieldset>
+        </div>
+        <h3>Fecha</h3>
+        <div>
+            <p>Date: <input type="text" id="datepicker"></p>
+        </div>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $("#acordeon").accordion({
+            heightStyle: "content"
+        });
+        var availableTags = [
+            "fran",
+            "hola",
+            "sanchez",
+            "qwerrtyuyiioo",
+            "eh eh eh"
+        ];
+        $("#tags").autocomplete({
+            source: availableTags
+        });
+        $("#boton").button({
+            icon: "ui-icon-power",
+            iconPosition: "end"
+        });
+
+        $( function() {
+            $( "input" ).checkboxradio();
+        } );
+
+        $(".controlgroup").controlgroup({
+            direction: "vertical"
+        });
+
+        $(function () {
+            $("#datepicker").datepicker({
+                showOtherMonths: true,
+                selectOtherMonths: true
+            });
+        });
+
+    });
+</script>
+</html>
